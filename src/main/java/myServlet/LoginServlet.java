@@ -51,15 +51,15 @@ public class LoginServlet extends HttpServlet {
     }
 
     private boolean checkForUser(String login, String password) {
-        /*User user = null;
+        User user = null;
         try {
             user = JDBCConnection.getUserByLogin(login);
             return JDBCConnection.authUser(user, password);
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return false;*/
-        File user = new File("C:\\Users\\настя\\source\\repos\\servletApp\\users.txt");
+        return false;
+        /*File user = new File("C:\\Users\\настя\\source\\repos\\servletApp\\users.txt");
         try (BufferedReader br = new BufferedReader(new FileReader(user)))
         {
             String line;
@@ -74,7 +74,7 @@ public class LoginServlet extends HttpServlet {
 
         } catch (IOException e) {
             e.printStackTrace();
-        }
-        return false;
+        }*/
+        //return false;
     }
 }

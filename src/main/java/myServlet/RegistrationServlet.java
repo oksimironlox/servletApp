@@ -31,23 +31,23 @@ public class RegistrationServlet extends HttpServlet {
             String login = req.getParameter("login");
             String password = req.getParameter("password");
             String email = req.getParameter("email");
-            File user = new File("C:\\Users\\настя\\source\\repos\\servletApp\\users.txt");
+            /*File user = new File("C:\\Users\\настя\\source\\repos\\servletApp\\users.txt");
             try (FileWriter out = new FileWriter(user, StandardCharsets.UTF_8, true))
             {
                 String txt = login + ";" + password + ";" + email +"\n";
                 out.write(txt);
             } catch (IOException e) {
                 e.printStackTrace();
-            }
-            /*User user = new User(login, email, password);
+            }*/
+            User user = new User(login, password, email);
             try {
                 if (!JDBCConnection.containsUser(user)) {
                     JDBCConnection.addUser(user);
-                    resp.sendRedirect("/login");
+                    resp.sendRedirect("login");
                 }
             } catch (SQLException e) {
                 e.printStackTrace();
-            }*/
+            }
             resp.sendRedirect("login");
         }
 

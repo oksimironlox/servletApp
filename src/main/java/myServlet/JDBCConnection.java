@@ -5,7 +5,7 @@ import java.util.logging.Logger;
 
 public class JDBCConnection {
     private static final String url = "jdbc:mysql://localhost:3306/users";
-    private static final String username = "admin";
+    private static final String username = "root";
     private static final String password = "admin";
     private static Connection connection = null;
 
@@ -55,8 +55,8 @@ public class JDBCConnection {
     public static void addUser(User user) throws SQLException {
         connect();
         try{
-            executeUpdate("INSERT INTO user VALUES ('" + user.getLogin() + "';'"
-                    + user.getPassword() + "';'" + user.getEmail() + "')");
+            executeUpdate("INSERT INTO user (login, password, email) VALUES ('" + user.getLogin() + "','"
+                    + user.getPassword() + "','" + user.getEmail() + "')");
             disconnect();
         }catch (SQLException e){
             disconnect();
